@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <!-- Top-left rectangle -->
+  <rect x="0" y="0" width="50" height="50" fill="white" />
+  <!-- Top-right rectangle -->
+  <rect x="40" y="0" width="10" height="10" fill="white" />
+  <!-- Bottom-left rectangle -->
+  <rect x="0" y="40" width="10" height="10" fill="white" />
+  <!-- Bottom-right rectangle -->
+  <rect x="40" y="40" width="10" height="10" fill="white" />
+  <!-- Horizontal line -->
+  <line x1="0" y1="25" x2="50" y2="25" stroke="rgba(201, 201, 201, 0.5)" stroke-width="0.5" />
+  <!-- Vertical line -->
+  <line x1="25" y1="0" x2="25" y2="50" stroke="rgba(201, 201, 201, 0.5)" stroke-width="0.5" />
+</svg>
