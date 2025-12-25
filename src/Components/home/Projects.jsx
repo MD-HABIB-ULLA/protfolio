@@ -4,7 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 const Projects = () => {
   const projectData = [
     {
-      id: 6,
+      id: 1,
       title: "Workout Planner",
       description:
         "A fitness app for users to plan workouts, track progress, and achieve fitness goals with personalized routines and analytics.",
@@ -21,6 +21,33 @@ const Projects = () => {
     },
     {
       id: 2,
+      title: "Fervent",
+      description:
+        "Fervent Multiboard Industries Ltd. is a leading manufacturer of MDF, HDF flooring, and particle boards in Bangladesh. ",
+      image: "https://i.ibb.co.com/bjF44BvW/screencapture-ferventbd-2025-12-25-11-24-13.png",
+      liveDemo: "https://www.ferventbd.com/",
+      technologies: ["Next.js", "Tailwind CSS", "animaiton.js", "More.."],
+    },
+    {
+      id: 3,
+      title: "D-Code",
+      description:
+        "Everything you need, just a click away. Explore categories like Summer Collection, Urban Wear, and more.",
+      image: "https://i.ibb.co.com/kvrb1gd/screencapture-d-code-six-vercel-app-2025-12-25-11-30-06.png",
+      liveDemo: "https://d-code-six.vercel.app/",
+      technologies: ["Next.js", "Tailwind CSS", "More.."],
+    },
+    {
+      id: 4,
+      title: "Libra Luxuries",
+      description:
+        "Experience the simplicity of sustainable sourcing for a better tomorrow. Libra Luxuries handles everything from design and manufacturing to quality inspection and delivery for your brand",
+      image: "https://i.ibb.co.com/7N69zr4W/screencapture-united-fortune-frontend-vercel-app-2025-12-25-11-35-20.png",
+      liveDemo: "https://united-fortune-frontend.vercel.app/",
+      technologies: ["Next.js", "Tailwind CSS", "More.."],
+    },
+    {
+      id: 5,
       title: "BistroBoss",
       description:
         "An enterprise-grade distribution management system designed to streamline inventory, sales, and logistics for businesses of all sizes.",
@@ -36,7 +63,7 @@ const Projects = () => {
       ],
     },
     {
-      id: 5,
+      id: 6,
       title: "NaturalCraft",
       description:
         "A stunning portfolio website for an artisan showcasing handmade crafts, with an integrated store for custom orders.",
@@ -52,7 +79,7 @@ const Projects = () => {
       ],
     },
     {
-      id: 4,
+      id: 6,
       title: "BookZone",
       description:
         "A comprehensive online bookstore featuring user-friendly search, personalized recommendations, and an integrated payment system.",
@@ -62,25 +89,7 @@ const Projects = () => {
       technologies: ["React", "Redux", "Material-UI", "Node.js", "More.."],
     },
     {
-      id: 1,
-      title: "Panda Mart",
-      description:
-        "A feature-rich e-commerce platform for grocery and daily essentials, offering seamless shopping experience with a focus on user convenience and fast delivery.",
-      image: "https://i.ibb.co.com/wc7bY3h/panda-Mart.png",
-      github: "https://github.com/MD-HABIB-ULLA/panda",
-      liveDemo: "https://panda-9805f.web.app/",
-      technologies: [
-        "React",
-        "Redux",
-        "Tailwind CSS",
-        "Node.js",
-        "MongoDB",
-        "More..",
-      ],
-    },
-
-    {
-      id: 3,
+      id: 6,
       title: "EliteState",
       description:
         "A responsive real estate platform showcasing property listings, advanced filtering options, and virtual tours for buyers and sellers.",
