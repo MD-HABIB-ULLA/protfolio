@@ -11,6 +11,7 @@ import Ep from "./Components/home/Ep";
 import About from "./Components/home/About";
 import WhenReady from "./Components/home/WhenReady";
 import Footer from "./Components/home/Footer";
+import Skills from "./Components/home/Skills";
 
 function App() {
   useEffect(() => {
@@ -55,6 +56,7 @@ function App() {
         {/* exprience  */}
         <div ref={epRef}>
           <Ep />
+          <Skills/>
         </div>
         {/* proects */}
         <div ref={projectsRef}>

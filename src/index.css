@@ -106,3 +106,13 @@ h1 {
   background-size: 200% 200%;
   animation: gradient 5s ease infinite;
 }
+.bg-hello {
+  background: #ffffff;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 20%,
+    rgba(161, 161, 157, .7) 89%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}

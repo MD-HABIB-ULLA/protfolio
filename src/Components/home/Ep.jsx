@@ -34,6 +34,7 @@ const workExperience = [
     ],
   },
 ];
+
 const CenteredStepNumbers = () => {
   const controls = useAnimation();
   const sectionRef = useRef(null);
@@ -45,157 +46,186 @@ const CenteredStepNumbers = () => {
           controls.start("visible");
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => sectionRef.current && observer.unobserve(sectionRef.current);
   }, [controls]);
 
-  const stepVariants1 = {
-    hidden: { opacity: 0, x: -50 },
+  const stepVariants = {
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
-      x: 0,
-      transition: { duration: 1, ease: "easeOut" },
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
-  const stepVariants2 = {
-    hidden: { opacity: 0, x: 50 },
+  const numberVariants = {
+    hidden: { scale: 0, x: "-50%" },
     visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 1, ease: "easeOut" },
+      scale: 1,
+      x: "-50%",
+      transition: { type: "spring", stiffness: 200, damping: 15 },
     },
   };
 
   return (
-    <section className="py-20" ref={sectionRef}>
+    <section className="py-16 md:py-24 " ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className=" pb-[30px] sm:pb-[40px] lg:pb-[50px]">
-          {" "}
-          <div data-aos="fade-up" className="flex items-center justify-center">
-            <div
-              style={{ borderColor: "#007AFF" }}
-              className="px-5 py-2 bg-primary/10 rounded-full md:text-base text-sm text-primary border border-primary"
-            >
-              <p>My Work Exprience </p>
-            </div>
-          </div>
+        {/* Header */}
+        <div className="pb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center px-4 py-1.5 bg-primary/10 rounded-full text-sm font-medium text-primary border border-primary/20 mb-4"
+          >
+            My Work Experience
+          </motion.div>
         </div>
 
-        <div className="">
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute w-[6px] rounded-full bg-primary h-full left-4 transform md:left-1/2 md:-translate-x-1/2"></div>
+        {/* Timeline Container */}
+        <div className="relative">
+          {/* Central Vertical Line (Desktop) */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-200">
+            <motion.div
+              initial={{ height: 0 }}
+              animate={{ height: "100%" }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="w-full bg-gradient-to-b from-primary via-primary to-transparent"
+            />
+          </div>
 
-            {/* Steps */}
-            {workExperience.map((experience, index) => (
-              <div
-                key={experience.number}
-                className={`relative z-10 mb-12 flex items-center justify-center md:justify-normal  ${
-                  index % 2 === 0
-                    ? "flex-col md:flex-row items-center"
-                    : "flex-col md:flex-row-reverse  items-center"
-                }`}
+          {/* Mobile Vertical Line */}
+          <div className="md:hidden absolute left-5 w-0.5 h-full bg-gradient-to-b from-primary via-primary to-transparent"></div>
+
+          {workExperience.map((experience, index) => (
+            <div
+              key={experience.number}
+              className="relative mb-12 md:mb-20 last:mb-0"
+            >
+              {/* Timeline Number / Dot */}
+              <motion.div
+                variants={numberVariants}
+                initial="hidden"
+                animate={controls}
+                className="absolute left-5 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-10 h-10 md:w-14 md:h-14 rounded-full  bg-primary text-white shadow-xl z-30"
               >
-                {/* Step number (centered on the line) */}
-                <div className="absolute left-4 transform -translate-x-1/2 md:left-1/2 flex items-center justify-center w-12 h-12 rounded-full border-4 border-primary bg-white text-primary font-bold text-xl z-10">
+                <span className="font-bold text-lg md:text-xl">
                   {experience.number}
-                </div>
+                </span>
+              </motion.div>
 
-                {/* Content */}
+              {/* Grid Layout for Wide View */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+                {/* Content Side */}
                 <motion.div
-                  variants={index % 2 === 0 ? stepVariants1 : stepVariants2}
+                  variants={stepVariants}
                   initial="hidden"
                   animate={controls}
-                  className={`bg-white border p-6 rounded-lg shadow-lg w-[80%] md:w-[47%] ${
-                    index % 2 === 0
-                      ? "   ml-13 md:ml-0 md:mr-auto md:pr-5"
-                      : "ml-13 md:ml-auto md:pl-8"
+                  className={`relative ml-12 md:ml-0 ${
+                    index % 2 === 0 ? "md:pr-12" : "md:pl-12 md:col-start-2"
                   }`}
                 >
-                  <div key={index} className="">
-                    <div className="space-y-4">
-                      <div className="flex items-start justify-between">
-                        <div className="relative h-12  w-24 overflow-hidden ">
-                          <img
-                            src={experience.logo}
-                            alt={`${experience.company} logo`}
-                            className="object-cover"
-                            onError={(e) => {
-                              e.currentTarget.src =
-                                "https://sjc.microlink.io/YP_TStyIBaPPPTczxp4fSci6CCYt7Ekv_A5oUg6KyVkzQJwaBbW3C4RlSG_HSov5LQCQmU4K_Bm372dRtWsCHQ.jpeg";
-                            }}
-                          />
+                  {/* The Card Container */}
+                  <div className="group relative bg-white/70 backdrop-blur-xl rounded-[2rem] p-1 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-primary/20 transition-all duration-500">
+                    {/* Subtle Gradient Border Effect */}
+                    <div className="absolute inset-0 rounded-[2rem] border border-white/40 pointer-events-none" />
+                    <div className="absolute inset-0 rounded-[2rem] border border-transparent group-hover:border-primary/20 transition-colors duration-500 pointer-events-none" />
+
+                    <div className="relative p-6 md:p-8">
+                      {/* Header: Company Logo & Meta Info */}
+                      <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+                        <div className="relative group/logo">
+                          <div className="absolute -inset-2 bg-primary/10 rounded-xl blur-lg opacity-0 group-hover/logo:opacity-100 transition-opacity" />
+                          <div className="relative h-12 w-28 bg-white/50 backdrop-blur-sm rounded-xl p-2 flex items-center justify-center border border-white shadow-sm">
+                            <img
+                              src={experience.logo}
+                              alt={experience.company}
+                              className="max-h-full max-w-full object-contain filter grayscale group-hover/logo:grayscale-0 transition-all duration-300"
+                              onError={(e) => {
+                                e.currentTarget.src = `https://ui-avatars.com/api/?name=${experience.company}&background=random`;
+                              }}
+                            />
+                          </div>
                         </div>
+
+                        <div className="text-right">
+                          <span className="text-[11px] font-bold tracking-widest uppercase text-primary bg-primary/5 px-4 py-1.5 rounded-full border border-primary/10">
+                            {experience.duration}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Role & Company */}
+                      <div className="space-y-1 mb-6">
+                        <h3 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">
+                          {experience.role}
+                        </h3>
+                        <p className="text-lg font-medium text-slate-500 flex items-center gap-2">
+                          @{" "}
+                          <span className="text-slate-800">
+                            {experience.company}
+                          </span>
+                        </p>
+                      </div>
+
+                      {/* Responsibilities with Modern Bullet Points */}
+                      <div className="space-y-4 mb-8">
+                        {experience.responsibilities.map((res, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-start gap-4 group/item"
+                          >
+                            <div className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-primary/40 group-hover/item:bg-primary group-hover/item:scale-150 transition-all duration-300" />
+                            <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                              {res}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Footer Link - Call to Action Style */}
+                      <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
                         <a
                           href={experience.website}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-sm text-gray-500 hover:text-gray-900 flex items-center gap-1"
+                          className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-primary transition-all group/link"
                         >
-                          Visit website
+                          View Live Project
                           <svg
-                            className="h-4 w-4"
-                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-4 h-4 transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform"
                             fill="none"
-                            viewBox="0 0 24 24"
                             stroke="currentColor"
+                            viewBox="0 0 24 24"
                           >
                             <path
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              strokeWidth={2}
+                              strokeWidth="2.5"
                               d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                             />
                           </svg>
                         </a>
+
+                        {/* Modern "Done" Indicator */}
+                        <div className="flex -space-x-2">
+                          <div className="w-8 h-8 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center">
+                            <FaCheck className="text-[10px] text-slate-400" />
+                          </div>
+                        </div>
                       </div>
-                      <div className="space-y-1">
-                        <h3 className="text-[24px] font-bold">
-                          {experience.role}
-                        </h3>
-                        <p className="text-sm text-gray-500">
-                          {experience.company}
-                        </p>
-                        <p className="text-sm text-gray-500">
-                          {experience.duration}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="mt-4">
-                      <ul className=" pl-4 space-y-2">
-                        {experience.responsibilities.map(
-                          (responsibility, idx) => (
-                            <li
-                              key={idx}
-                              className={`flex font-semibold text-[17px] 
-                                   text-[#475467] 
-                              items-start gap-2`}
-                            >
-                              <span className="text-white text-sm p-1 mt-[2px]  rounded-md bg-primary box-content">
-                                <FaCheck size={14} />
-                              </span>{" "}
-                              <div className="">{responsibility}</div>
-                            </li>
-                          )
-                        )}
-                      </ul>
                     </div>
                   </div>
                 </motion.div>
+
+                {/* Empty Side for Desktop (Handled by Grid) */}
+                <div className="hidden md:block" />
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
