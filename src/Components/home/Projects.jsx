@@ -8,7 +8,7 @@ const Projects = () => {
       title: "Workout Planner",
       description:
         "A fitness app for users to plan workouts, track progress, and achieve fitness goals with personalized routines and analytics.",
-      image: "https://i.ibb.co.com/SxntY6S/workout.png",
+      image: "/images/website/workout.png",
       github: "https://github.com/MD-HABIB-ULLA/Workout-client",
       liveDemo: "https://workout-03.web.app/",
       technologies: [
@@ -33,7 +33,7 @@ const Projects = () => {
       title: "D-Code",
       description:
         "Everything you need, just a click away. Explore categories like Summer Collection, Urban Wear, and more.",
-      image: "https://i.ibb.co.com/kvrb1gd/screencapture-d-code-six-vercel-app-2025-12-25-11-30-06.png",
+      image: "/images/website/dcode.png",
       liveDemo: "https://d-code-six.vercel.app/",
       technologies: ["Next.js", "Tailwind CSS", "More.."],
     },
@@ -42,7 +42,7 @@ const Projects = () => {
       title: "Libra Luxuries",
       description:
         "Experience the simplicity of sustainable sourcing for a better tomorrow. Libra Luxuries handles everything from design and manufacturing to quality inspection and delivery for your brand",
-      image: "https://i.ibb.co.com/7N69zr4W/screencapture-united-fortune-frontend-vercel-app-2025-12-25-11-35-20.png",
+      image: "/images/website/libra.png",
       liveDemo: "https://united-fortune-frontend.vercel.app/",
       technologies: ["Next.js", "Tailwind CSS", "More.."],
     },
@@ -51,7 +51,7 @@ const Projects = () => {
       title: "BistroBoss",
       description:
         "An enterprise-grade distribution management system designed to streamline inventory, sales, and logistics for businesses of all sizes.",
-      image: "https://i.ibb.co.com/fqY1fdP/distroboss.png",
+      image: "/images/website/bistro.png",
       github: "https://github.com/MD-HABIB-ULLA/bistro-boss-restaurant",
       liveDemo: "https://bistroboss-70669.web.app/",
       technologies: [
@@ -67,7 +67,7 @@ const Projects = () => {
       title: "NaturalCraft",
       description:
         "A stunning portfolio website for an artisan showcasing handmade crafts, with an integrated store for custom orders.",
-      image: "https://i.ibb.co.com/8XQ121C/naturalcraft.png",
+      image: "/images/website/craft.png",
       github: "https://github.com/MD-HABIB-ULLA/Natural-craft",
       liveDemo: "https://naturalcraft-7d1c8.web.app/",
       technologies: [
@@ -79,21 +79,21 @@ const Projects = () => {
       ],
     },
     {
-      id: 6,
+      id: 7,
       title: "BookZone",
       description:
         "A comprehensive online bookstore featuring user-friendly search, personalized recommendations, and an integrated payment system.",
-      image: "https://i.ibb.co.com/6F77cKf/bookzone.png",
+      image: "/images/website/bookzone.png",
       github: "https://github.com/MD-HABIB-ULLA/book-zone-client",
       liveDemo: "https://bookzone-7c036.firebaseapp.com/",
       technologies: ["React", "Redux", "Material-UI", "Node.js", "More.."],
     },
     {
-      id: 6,
+      id: 8,
       title: "EliteState",
       description:
         "A responsive real estate platform showcasing property listings, advanced filtering options, and virtual tours for buyers and sellers.",
-      image: "https://i.ibb.co.com/D9GFWV2/elitestate.png",
+      image: "/images/website/elite.png",
       github: "https://github.com/MD-HABIB-ULLA/Elaite-state",
       liveDemo: "https://elite-estate-d93f4.web.app/",
       technologies: [

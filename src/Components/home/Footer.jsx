@@ -12,28 +12,28 @@ const Footer = () => {
 
         {/* Social Links */}
         <div className="flex items-center gap-6">
-          <Link
+          <a
             href="https://www.linkedin.com/in/habib-ulla/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-base hover:text-blue-400 transition-colors"
           >
             LinkedIn
-          </Link>
-          <Link
+          </a>
+          <a
             href="https://github.com/MD-HABIB-ULLA"
             target="_blank"
             rel="noopener noreferrer"
             className="text-base hover:text-gray-400 transition-colors"
           >
             GitHub
-          </Link>
-          <Link
+          </  a>
+          <a
             href="mailto:habibulla1278@gmail.com"
             className="text-base hover:text-red-400 transition-colors"
           >
             Email Me
-          </Link>
+          </a>
         </div>
       </div>
     </footer>

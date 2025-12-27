@@ -1,0 +1,24 @@
+Dear Hiring Team at Ethical Den BD,  
+
+I am writing to express my interest in the Next.js Developer position (Remote) that was recently advertised. With a strong background in modern frontend technologies and a passion for building fast, scalable, and user-friendly web applications, I am excited about the opportunity to contribute to your growing team.  
+
+My experience includes:  
+- Developing and maintaining applications using Next.js and React.js.  
+- Implementing responsive and visually appealing UI designs with HTML5, CSS3, and Tailwind CSS.  
+- Optimizing applications for performance and SEO.  
+- Integrating REST APIs and working with headless CMS and backend systems.  
+- Collaborating effectively in remote environments using Git/GitHub for version control.  
+
+I thrive in independent remote settings and enjoy tackling challenges that require clean, maintainable, and reusable code. Additionally, I have experience with SSR, SSG, and ISR, which I believe aligns well with your requirements.  
+
+Attached is my updated resume for your review. You can also view my portfolio here: [Portfolio Link]  
+
+I am impressed by Ethical Den’s emphasis on a flexible, remote-friendly work culture and the opportunity to work on real-world projects. I am confident that my skills and enthusiasm make me a strong fit for this role.  
+
+Thank you for considering my application. I look forward to the possibility of contributing to your team and am available for an interview at your convenience.  
+
+Best regards,  
+[Your Full Name]  
+[Phone Number]  
+[Email Address]  
+[LinkedIn Profile/GitHub Link (Optional)]  

@@ -72,7 +72,7 @@ const CenteredStepNumbers = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 " ref={sectionRef}>
+    <section className="pb-16 md:pb-24 " ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="pb-16 text-center">

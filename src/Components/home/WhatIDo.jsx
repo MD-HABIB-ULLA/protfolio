@@ -36,7 +36,7 @@ const WhatIDo = () => {
   ];
 
   return (
-    <div className="container mx-auto px-[20px] pb-[80px] sm:pb-[100px] lg:pb-[150px]">
+    <div className="container mx-auto px-[20px] py-[80px] sm:py-[100px] lg:py-[150px]">
       <div data-aos="fade-up" className="flex items-center justify-center ">
         <div
           style={{ borderColor: "#007AFF" }}
